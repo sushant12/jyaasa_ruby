@@ -71,4 +71,43 @@ MEDIUM/HARD QUESTIONS:
 Practical Ruby Questions:
   - web scraping . Write a ruby program that gets the headlines for the users displayed from todays edition of ekantipur.com
 
+#Difference between symbol and string in rails.
+  
+  Symbol is like a string but it is immutable. Normally we use symbols if we are sure that its value will stay unique. Symbol starts with `:` colon . There can be only one instance of any given symbol. Since we don’t use symbols for data processing tasks, they lack most of the classic string manipulation methods.
+  
+Ruby`s String class is optimized for the data processing side of strings. We want to use strings for data, for things that we might want to truncate, turn to uppercase, or concatenate. They are mutable. A new instance is created everytime we declare a new string. 
 
+#Explain how everything in Ruby is an object
+
+Ruby is OOP language.Everything in ruby comes equipped with their very own methods. 
+
+Ruby will look for the method in the class of the object. If it finds the methods there ruby will call it else it will search for the methods in the super class and try there. It will repeat until it either finds the method or run out of superclasses.
+
+Suppose we have a parent class called `Animal`.
+
+//Animal.rb
+
+`class Animal; end`
+
+and Dog inherits from the Animal class
+
+//Dog.rb
+
+`require_relative 'Animal.rb';
+class Dog < Animal; end`
+
+If we were to know what is the superclass of Dog then we would do `puts Dog.superclass` and it would print `'Animal'`.Now if we were to `puts Animal.superclass` it would print `'Object'`
+
+Ruby implicitly sets a superclass `'Object'` unless we specify a superclass ourselves. So 
+
+//Animal.rb
+
+`class Animal; end`
+
+is equivalent to 
+
+//Animal.rb
+
+`class Animal < Object; end`
+
+Since virtually all Ruby objects can trace their ancestry back to Object , virtually all Ruby objects have a set of methods in common:the ones they inherit from Object .
