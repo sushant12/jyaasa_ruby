@@ -111,3 +111,119 @@ is equivalent to
 `class Animal < Object; end`
 
 Since virtually all Ruby objects can trace their ancestry back to Object , virtually all Ruby objects have a set of methods in common:the ones they inherit from Object .
+
+#What is your favourite testing tool?
+
+Testing the codes has proven very effective in SDLC as it tries to eliminate any possible bugs. I tend to use Rspec , a BDD testing framework.
+
+#What are gems and which are some of your favourite?
+
+I do not have a very specific favourite gem but I use rails, pry.
+
+#What is a class?
+
+A class is blue print of an object.
+
+#What is the difference between a class and a module?
+
+Instance variables can only be declared in class. We can create an object by instansiating a class. 
+
+We can created mixin using module by including it inside the class.
+
+#How would you declare and use a constructor in Ruby?
+
+Declaring a constructor
+`
+  class ClassName
+  	def initialize
+  	end
+  end`
+  
+  Using a constructor
+  
+  `class ClassName
+  	def initialize
+  		puts "Object initiated"
+  	end
+  end
+  ClassName.new  //=> Object initiated `
+  
+#How and when would you declare a Global Variable?
+
+Using $ infront of a variable name will declare a global variable.
+
+#How would you create getter and setter methods in Ruby?
+
+As the name itself implies, setter sets the vale and getter returns the value. Ruby has provided us with some handy ways to create getters and setters.
+
+ ` attr_reader :name`
+ 
+ will create
+ 
+ ` def name
+  	@name
+  end`
+  
+  `attr_writer :name`
+  
+  will create
+  
+  `def name=(p)
+  	@name = p
+  end`
+  
+  `attr_accessor :name` 
+  
+  is just a short form of above.
+  
+#Describe the difference between class and instance variables?
+
+Instance variable is what the class knows. It is also known as state.they’re stored with each object and available to all the instance methods of those objects.no other object can access an object’s instance variables
+
+#What is a Proc?
+
+If the last argument to a method is preceded by an ampersand, Ruby assumes that it is a Proc
+object
+
+#What are the three levels of method access control for classes and what do they signify? What do they imply about the method?
+
+private - can only be called from inside the class that defined them and its subclasses, 
+
+
+  protected - Any instance of a class can call a protected method on any other instance of the class, 
+  
+  
+  public - available to everyone except for initialize , which is always private
+  
+  
+  The Ruby philosophy is that the programmer is in charge. If you want to declare some method private, fine. Later, if someone, perhaps you, wants to violate that privacy, fine again. You are in charge and presumably you know what you are doing.
+  
+#Explain this ruby idiom a ||= b
+
+Assign a value to a variable only if that variable isn’t already set.This is almost, but not quite, the same as `var = var || "default value"` . It differs in that no assignment is made at all if the variable is already set.
+
+#What is the primary difference in these two code snippets?
+      // Java
+      public boolean isEmpty(String s) {
+        return s.length() == 0;
+      }
+      # ruby
+      def empty?(s)
+        return s.size == 0
+      end 
+      
+In short, the primary difference in them is duck-typing.If we continue to write static type style base classes, our code will continue to be much bulkier than it might be.
+
+#What is your favorite api resource for ruby?
+
+The documentation in itself is a treasure however I keep aside "programming ruby: the pragmatic programmers guide" and lots of other books. I like to read a lot.
+
+#Tell me about your development environment.
+   OS: Linux Mint 17.1 Rebecca
+   VC: git
+   TextEditor: Sublime
+   RVM
+   REPL console: pry
+   gem v: 2.4.8
+   ruby v: 2.2.3
+   rails v: 4.2.4
